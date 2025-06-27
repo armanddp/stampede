@@ -1,0 +1,11 @@
+- name: FastGet
+  method: GET
+  url: https://httpbin.org/uuid
+  expect_status: 200
+
+- name: QuickPost
+  method: POST
+  url: https://httpbin.org/post
+  json_body: |
+    {"id": {{userId}}, "ts": {{epochms}}}
+  expect_status: 200 

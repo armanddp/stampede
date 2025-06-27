@@ -1,0 +1,35 @@
+- name: GetProfile
+  method: GET
+  url: https://httpbin.org/headers
+  expect_status: 200
+
+- name: UpdateProfile
+  method: POST
+  url: https://httpbin.org/post
+  json_body: |
+    {
+      "user_id": {{userId}},
+      "name": "User {{userId}}",
+      "timestamp": {{epochms}},
+      "preferences": {
+        "theme": "dark",
+        "notifications": true
+      }
+    }
+  expect_status: 200
+
+- name: GetActivity
+  method: GET
+  url: https://httpbin.org/get?user={{userId}}&limit={{randInt 5 20}}
+  expect_status: 200
+
+- name: UploadData
+  method: PUT
+  url: https://httpbin.org/put
+  json_body: |
+    {
+      "data": "Sample data for user {{userId}}",
+      "size": {{randInt 100 1000}},
+      "timestamp": {{epochms}}
+    }
+  expect_status: 200 

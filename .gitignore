@@ -1,4 +1,39 @@
-# If you prefer the allow list template instead of the deny list, see community template:
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Go workspace file
+go.work
+
+# Build directory
+build/
+
+# Binary in root directory
+stampede-shooter
+stampede-shooter-*
+
+# Test output files
+*.json
+test-results.*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db # If you prefer the allow list template instead of the deny list, see community template:
 # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
 #
 # Binaries for programs and plugins
@@ -30,3 +65,11 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Private/sensitive files
+acme-*.yml
+acme_*.md
+credentials.txt
+*credentials*
+*-auth.yml
+*-session.yml
